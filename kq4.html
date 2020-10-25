@@ -1,0 +1,68 @@
+<!--
+ The Emularity: An Example Computer Loader
+ For use with The Emularity, downloadable at http://www.emularity.com/
+
+ SIMPLE STEPS for trying an emulated computer ("Doom (shareware
+ edition)" for the PC).
+
+ * Check out this repository in your browser-accessible directory;
+   this file as well as es6-promise.js, browserfs.min.js and loader.js
+   are required. The logo and images directories are optional, but the
+   splash screen looks quite a lot better when they're available.
+
+ * Download the two files that comprise the compiled DosBox emulator:
+   https://archive.org/download/emularity_engine_v1/dosbox-sync.js.gz,
+   and https://archive.org/download/emularity_engine_v1/dosbox-sync.mem.gz.
+
+ * Download a copy of Doom from https://archive.org/download/DoomsharewareEpisode/DoomV1.9sw1995idSoftwareInc.action.zip
+
+ * Visit your example_dosbox.html file with a modern
+   Javascript-capable browser.
+-->
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>King's Quest IV</title>
+  </head>
+  <body style="background-color:black; color:white">
+    <canvas id="canvas" style="display: block; margin: 100px auto"> </canvas> 
+    <h1 id="startMeUp">Start KQ4</h1>
+    <script type="text/javascript" src="es6-promise.js"></script>
+    <script type="text/javascript" src="browserfs.min.js"></script>
+    <script type="text/javascript" src="loader.js"></script>
+    <script type="text/javascript">
+      navigator.getGamepads_ = navigator.getGamepads;
+      navigator.getGamepads = function() {
+        var gamepadlist = navigator.getGamepads_();
+        var pads = [];
+        for (var i = 0; i < gamepadlist.length; i++) {
+          pads[i] = (gamepadlist[i] !== null ? gamepadlist[i] : undefined);
+        }
+        return pads;
+      }
+      var emulator = new Emulator(
+        document.querySelector("#canvas"),
+        null,
+        new DosBoxLoader(
+          DosBoxLoader.emulatorJS("emulators/em-dosbox/dosbox-sync.js"),
+          DosBoxLoader.locateAdditionalEmulatorJS(locateAdditionalFiles),
+          DosBoxLoader.nativeResolution(640, 480),
+          DosBoxLoader.mountZip("c", DosBoxLoader.fetchFile("Game File","kq4.zip")),
+          DosBoxLoader.startExe("sierra.exe")
+        )
+      )
+      
+      document.getElementById('startMeUp').onclick =(() => {
+        emulator.start();
+      })
+
+      function locateAdditionalFiles(filename) {
+        if (filename === "dosbox.html.mem") {
+          return "emulators/em-dosbox/dosbox-sync.mem";
+        }
+        return "emulators/em-dosbox/"+ filename;
+      }
+    </script>
+  </body>
+</html>

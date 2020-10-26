@@ -28,7 +28,8 @@ startButton.onclick = () => {
 }
 
 fullScreenButton.onclick = () => {
-  document.body.requestFullscreen()
+  canvas.requestFullscreen()
+  // document.body.requestFullscreen()
   // canvas.style.margin="100px"
   // canvas.style.width="75%"
   // canvas.style.height="100%"

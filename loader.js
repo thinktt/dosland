@@ -1961,7 +1961,9 @@ var Module = null;
          if (itemStat.isDirectory(itemStat.mode)) {
            searchDirectory(itemPath);
          } else if (item === 'dosbox.conf') {
+           console.log('Found DosBox config')
            dosboxConfPath = itemPath;
+           console.log(new TextDecoder("utf-8").decode(fs.readFileSync(dosboxConfPath, null, flag_r)));
          }
        });
      }

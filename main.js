@@ -36,6 +36,15 @@ fullScreenButton.onclick = () => {
   
 }
 
+canvas.addEventListener("keydown",function(e){
+  console.log('esc was pressed over canvas')
+  var charCode = e.charCode || e.keyCode || e.which;
+  if (charCode == 27){
+      e.preventDefault()
+      return false;
+  }
+});
+
 
 function locateAdditionalFiles(filename) {
   if (filename === "dosbox.html.mem") {

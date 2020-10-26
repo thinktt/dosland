@@ -1,11 +1,16 @@
 body {
     color: white;
     background-color: black;
+    /* background-image: url("images/ARCHES.dib"); */
+    /* background-repeat: repeat; */
 }
 
 #canvas {
+    margin-top: ;
     display: block;
-    margin: 0 auto;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
     height: 75%;
 }
 

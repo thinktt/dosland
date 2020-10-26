@@ -1,5 +1,6 @@
 const canvas = document.querySelector('#canvas')
-const fscreenButton = document.querySelector('#fullScreen')
+const fullScreenButton = document.querySelector('#fullScreen')
+const startButton = document.querySelector('#start')
 
 // navigator.getGamepads_ = navigator.getGamepads;
 // navigator.getGamepads = function() {
@@ -19,26 +20,20 @@ var emulator = new Emulator(
     // DosBoxLoader.nativeResolution(640, 480),
     DosBoxLoader.mountZip("c", DosBoxLoader.fetchFile("Game File","kq4.zip")),
     DosBoxLoader.startExe("sierra.exe"),
-  ),
-  () => {
-    console.log('Yo')
-  }  
+  )  
 )
 
-emulator.start();
-fscreenButton.onclick = () => {
-  canvas.requestFullscreen()
-  // emulator.requestFullScreen()
-  // console.log('Howdy')
-  canvas.style.width = "50%"
-  // canvas.style.height = "100%"
+startButton.onclick = () => {
+  emulator.start();
 }
 
-console.log("Howdy")
-
-
-
-
+fullScreenButton.onclick = () => {
+  document.body.requestFullscreen()
+  // canvas.style.margin="100px"
+  // canvas.style.width="75%"
+  // canvas.style.height="100%"
+  
+}
 
 
 function locateAdditionalFiles(filename) {

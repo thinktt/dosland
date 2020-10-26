@@ -23,11 +23,14 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="kq4.css" rel="stylesheet">
     <title>King's Quest IV</title>
   </head>
-  <body style="background-color:black; color:white">
-    <canvas id="canvas" style="display: block; margin: 100px auto; width: 800px; height: 600px"> </canvas> 
-    <h1 id="fullScreen" style="margin-left: 45%; cursor: pointer">Full Screen</h1>
+  <body>
+    <canvas id="canvas"> </canvas> 
+    <h1 id="start" class="clickable">Start</h1>
+    <h1 id="fullScreen" class="clickable">Full Screen</h1>
+
     <script type="text/javascript" src="es6-promise.js"></script>
     <script type="text/javascript" src="browserfs.min.js"></script>
     <script type="text/javascript" src="loader.js"></script>

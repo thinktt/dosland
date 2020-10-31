@@ -1,0 +1,45 @@
+@font-face {
+    font-family: dosfont;
+    src: url(fonts/LessPerfectDOSVGA.ttf);
+}
+
+h1 {
+    font-weight: normal;
+}
+
+body {
+    color: white;
+    background-color: black;
+    font-family: dosfont;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tray {
+    font-size: 2rem;
+    margin-top: 1rem;
+    background-color: black;
+    padding: .5rem;
+    border-radius: .5rem;
+}
+
+.screen {
+    width: 100vh;
+    height: 62.5vh;
+    overflow: hidden;
+    /* outline: white 3px solid; */
+}
+
+#canvas {
+    width: 100%
+}
+
+.emularity-splash-screen {
+    background-color: blue;
+}
+
+
+.clickable {
+    cursor: pointer;
+}

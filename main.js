@@ -9,7 +9,7 @@ var emulator = new Emulator(
     DosBoxLoader.emulatorJS("emulators/em-dosbox/dosbox-sync.js"),
     DosBoxLoader.locateAdditionalEmulatorJS(locateAdditionalFiles),
     DosBoxLoader.nativeResolution(640, 480),
-    DosBoxLoader.mountZip("c", DosBoxLoader.fetchFile("Game File","kq4u.zip")),
+    DosBoxLoader.mountZip("c", DosBoxLoader.fetchFile("Game File","kq4a.zip")),
     DosBoxLoader.startExe("sierra.exe"),
   )  
 )

@@ -7,7 +7,6 @@ h1 {
     font-weight: normal;
 }
 
-
 body {
     color: white;
     background-color: black;
@@ -15,27 +14,31 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* background-image: url("images/ARCHES.dib"); */
-    /* background-repeat: repeat; */
 }
 
 .tray {
     font-size: 2rem;
     margin-top: 1rem;
-    background-color: darkslategray;
+    background-color: black;
     padding: .5rem;
     border-radius: .5rem;
 }
 
-#canvas {
-    margin-top: ;
-    display: block;
-    margin-top: auto;
-    margin-left: auto;
-    margin-right: auto;
-    height: 75%;
+.screen {
+    width: 100vh;
+    height: 75vh;
     outline: white 3px solid;
+    overflow: hidden;
 }
+
+#canvas {
+    width: 100%
+}
+
+.emularity-splash-screen {
+    background-color: blue;
+}
+
 
 .clickable {
     cursor: pointer;

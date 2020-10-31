@@ -27,7 +27,7 @@ body {
 .screen {
     width: 100vh;
     height: 75vh;
-    outline: white 3px solid;
+    /* outline: white 3px solid; */
     overflow: hidden;
 }
 

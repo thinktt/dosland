@@ -1,35 +1,24 @@
-<!--
- The Emularity: An Example Computer Loader
- For use with The Emularity, downloadable at http://www.emularity.com/
-
- SIMPLE STEPS for trying an emulated computer ("Doom (shareware
- edition)" for the PC).
-
- * Check out this repository in your browser-accessible directory;
-   this file as well as es6-promise.js, browserfs.min.js and loader.js
-   are required. The logo and images directories are optional, but the
-   splash screen looks quite a lot better when they're available.
-
- * Download the two files that comprise the compiled DosBox emulator:
-   https://archive.org/download/emularity_engine_v1/dosbox-sync.js.gz,
-   and https://archive.org/download/emularity_engine_v1/dosbox-sync.mem.gz.
-
- * Download a copy of Doom from https://archive.org/download/DoomsharewareEpisode/DoomV1.9sw1995idSoftwareInc.action.zip
-
- * Visit your example_dosbox.html file with a modern
-   Javascript-capable browser.
--->
-
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="/css/fontawesome.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/images/favicon.ico"/>
+    <!-- <link href="/css/brands.css" rel="stylesheet"> -->
+    <link href="/css/solid.css" rel="stylesheet">
     <link href="kq4.css" rel="stylesheet">
     <title>King's Quest IV</title>
   </head>
   <body>
-    <canvas id="canvas"></canvas> 
-    <h1 id="start" class="clickable">Start</h1>
-    <h1 id="fullScreen" class="clickable">Full Screen</h1>
+    <h1>Welcome to DOS Land</h1>
+    <canvas id="canvas"></canvas>
+    <section class="tray"> 
+      <i id="help" class="clickable fas fa-question-circle" title="Help"></i>
+      <i id="sound-off" class="clickable fas fa-volume-down " title="Turn Off Sound"></i>
+      <i id="sound-on" class="clickable fas fa-volume-mute " title="Turn On Sound"></i>
+      <i id="fullScreen" class="clickable fas fa-expand" title="Full Screen"></i>
+      <i id="start" class="clickable fas fa-play-circle" title="Start Gamme"></i>
+    </section> 
+
     <script type="text/javascript" src="es6-promise.js"></script>
     <script type="text/javascript" src="browserfs.min.js"></script>
     <script type="text/javascript" src="loader.js"></script>

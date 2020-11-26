@@ -11,19 +11,20 @@
   <body>
     <h1>Welcome to DOS Land</h1>
 
-    <section class="screen"> 
+    <section class="screen border"> 
       <canvas id="canvas"></canvas>
+      <div class="overlay">
+        <h1 id="title">King's Quest IV</h1>
+        <!-- <div id="start" class="clickable">click to start</div> -->
+      </div>
     </section>
-    <!-- <div> 
-      <h1>Click To Start</h1>
-    </div> -->
     
     <section class="tray"> 
       <i id="help" class="clickable fas fa-question-circle" title="Help"></i>
-      <i id="sound-off" class="clickable fas fa-volume-down " title="Turn Off Sound"></i>
-      <i id="sound-on" class="clickable fas fa-volume-mute " title="Turn On Sound"></i>
+      <i id="sound-on" class="clickable fas fa-volume-down " title="Turn Off Sound"></i>
+      <i id="sound-off" class="clickable fas fa-volume-mute " title="Turn On Sound"></i>
       <i id="fullScreen" class="clickable fas fa-expand" title="Full Screen"></i>
-      <i id="start" class="clickable fas fa-play-circle" title="Start Gamme"></i>
+      <i id="start" class="clickable fas fa-play-circle" title="Start Game"></i>
     </section> 
 
     <script type="text/javascript" src="es6-promise.js"></script>

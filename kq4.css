@@ -27,16 +27,44 @@ body {
 .screen {
     width: 100vh;
     height: 75vh;
-    /* outline: white 3px solid; */
     overflow: hidden;
+    position: relative;
 }
+
+.border {
+    /* outline: white 3px solid; */
+}
+
+.fade-out {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 1s, opacity 1s linear;
+}
+
 
 #canvas {
-    width: 100%
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1
 }
 
+.overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 7vh;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    /* opacity: 0.5; */
+}
+
+
 .emularity-splash-screen {
-    background-color: blue;
+    background-color: black;
 }
 
 

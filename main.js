@@ -1,6 +1,11 @@
 const canvas = document.querySelector('#canvas')
 const fullScreenButton = document.querySelector('#fullScreen')
 const startButton = document.querySelector('#start')
+const screenTitle = document.querySelector('#title')
+const soundOn = document.querySelector('#sound-on')
+const soundOff = document.querySelector('#sound-off')
+const screen = document.querySelector('.screen')
+const everything =  document.querySelector('body')
 
 var emulator = new Emulator(
   document.querySelector("#canvas"),
@@ -14,27 +19,43 @@ var emulator = new Emulator(
   )  
 )
 
+soundOff.onclick = () => {
+  console.log('Trying to mute')
+  everything.muted = true; 
+}
+
+soundOn.onclick = () => {
+  console.log('Trying to unmute')
+  everything.muted = false; 
+}
+
+
 startButton.onclick = () => {
-  emulator.start({ hasCustomCSS: true });
+  screenTitle.classList.add('fade-out')
+  screen.classList.remove('border')
+
+  emulator.start({ hasCustomCSS: true })
 }
 
 fullScreenButton.onclick = () => {
   canvas.requestFullscreen()
 }
 
+
+
 canvas.addEventListener("keydown",function(e){
   console.log('esc was pressed over canvas')
-  var charCode = e.charCode || e.keyCode || e.which;
+  var charCode = e.charCode || e.keyCode || e.which
   if (charCode == 27){
       e.preventDefault()
-      return false;
+      return false
   }
-});
+})
 
 
 function locateAdditionalFiles(filename) {
   if (filename === "dosbox.html.mem") {
-    return "emulators/em-dosbox/dosbox-sync.mem";
+    return "emulators/em-dosbox/dosbox-sync.mem"
   }
-  return "emulators/em-dosbox/"+ filename;
+  return "emulators/em-dosbox/"+ filename
 }
